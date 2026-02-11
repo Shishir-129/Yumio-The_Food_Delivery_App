@@ -8,7 +8,7 @@ const Navbar = ({setShowLogin}) => {
 
     const [menu,setMenu] = useState("menu");
 
-    const {getTotalCartAmount,token,setToken,setCartItems} = useContext(StoreContext);
+    const {getTotalCartAmount,token,setToken,setCartItems,searchTerm,setSearchTerm} = useContext(StoreContext);
 
     const navigate = useNavigate();
 
@@ -17,6 +17,25 @@ const Navbar = ({setShowLogin}) => {
       setToken(""); // clear token from context
       setCartItems({}); // clear cart items on logout
       navigate('/'); // navigate to home page
+    }
+
+    const handleSearch = (e) => {
+      const searchValue = e.target.value;
+      setSearchTerm(searchValue);
+    }
+
+    const handleSearchKeyPress = (e) => {
+      // Navigate to menu section only when Enter key is pressed
+      if (e.key === 'Enter' && searchTerm.trim() !== '') {
+        setMenu("menu");
+        // Scroll to explore-menu section
+        setTimeout(() => {
+          const menuSection = document.getElementById('explore-menu');
+          if (menuSection) {
+            menuSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 0);
+      }
     }
 
   return (
@@ -29,7 +48,17 @@ const Navbar = ({setShowLogin}) => {
         <a href='#footer' onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>Contact-us</a>
       </ul>
       <div className="navbar-right">
-        <img className="search-icon" src={assets.search_icon} alt="" />
+        <div className="search-container">
+          <img className="search-icon" src={assets.search_icon} alt="" />
+          <input 
+            type="text" 
+            placeholder="Search for food..." 
+            value={searchTerm} 
+            onChange={handleSearch}
+            onKeyPress={handleSearchKeyPress}
+            className="search-input"
+          />
+        </div>
         <div className="navbar-basket-icon">
             {/* Link is used to navigate to cart page when we click on the basket icon */}
             <Link to='/cart'><img src={assets.basket_icon} alt="" /></Link> 

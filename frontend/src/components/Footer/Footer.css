@@ -29,6 +29,11 @@
     list-style: none;
     margin-bottom: 10px;
     cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-content-center li:hover {
+    color: #ff7f50;
 }
 
 .footer-content-center h2, .footer-content-right h2 {
@@ -38,6 +43,17 @@
 .footer-social-icons img {
     width: 40px;
     margin-right: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+.footer-social-icons img:hover {
+    opacity: 1;
+}
+
+.footer-social-icons img.highlighted {
+    opacity: 1;
 }
 
 .footer hr {
@@ -45,6 +61,89 @@
     height: 2px;
     margin: 20px 0;
     background: grey;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-box h2 {
+    color: #323232;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.modal-box p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    color: #ff7f50;
 }
 
 /* Media Queries */

@@ -11,6 +11,7 @@ const StoreContextProvider = (props) => {
     const url = "http://localhost:4000";
     const [token,setToken] = useState("");
     const [food_list,setFoodList] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
 
     const addToCart = async (itemId) => {
         setCartItems((prev) => {
@@ -109,7 +110,9 @@ const StoreContextProvider = (props) => {
         getTotalCartAmount, /* Function to calculate total cart amount */
         url,
         token,
-        setToken /* Backend server URL */
+        setToken, /* Backend server URL */
+        searchTerm,
+        setSearchTerm
     }
     return (
         <StoreContext.Provider value = {contextValue}>

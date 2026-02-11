@@ -51,6 +51,34 @@
     cursor:pointer;
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f5f5f5;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+.search-container:focus-within {
+    border-color: tomato;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    color: #49557e;
+    width: 150px;
+}
+
+.search-input::placeholder {
+    color: #a8a8a8;
+}
+
 .navbar-basket-icon{
     position: relative;
 }
