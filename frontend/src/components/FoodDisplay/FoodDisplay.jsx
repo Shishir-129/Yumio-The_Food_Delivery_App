@@ -14,7 +14,7 @@ const FoodDisplay = ({category}) => {
         {food_list.map((item,index) => {
           {console.log(category,item.category);}
           if (category==='All' || category===item.category){ /* Display all items if category is 'All', else filter by category */
-            return <FoodItem key={index} id={item._id} name={item.name} description={item.description} price={item.price} image={item.image} />;
+            return <FoodItem key={index} id={item.id} name={item.name} description={item.description} price={item.price} image={item.image} />;
           }
         })}
       </div>
