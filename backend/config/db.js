@@ -13,7 +13,9 @@ const pool = new Pool({
     password: process.env.DB_PASSWORD || 'postgres',
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 5432,  // default PostgreSQL port
-    database: process.env.DB_NAME || 'yumio'
+    database: process.env.DB_NAME || 'yumio',
+    ssl: process.env.DB_HOST !== 'localhost' ? { rejectUnauthorized: false } : false,
+    connectionTimeoutMillis: 10000,
 });
 
 // Test connection
@@ -24,6 +26,14 @@ pool.on('error', (err) => {
 // Initialize database tables
 export const connectDB = async () => {
     try {
+        // Log connection details (without password)
+        console.log("Attempting DB connection with:", {
+            host: process.env.DB_HOST || 'localhost',
+            port: process.env.DB_PORT || 5432,
+            database: process.env.DB_NAME || 'yumio',
+            user: process.env.DB_USER || 'postgres'
+        });
+        
         // Test connection
         const client = await pool.connect();
         console.log("Connected to PostgreSQL");
@@ -75,7 +85,10 @@ export const connectDB = async () => {
 
         console.log("DB Connected and initialized successfully");
     } catch (error) {
-        console.error("Database connection error:", error.message);
+        console.error("Database connection error:");
+        console.error("Error message:", error.message);
+        console.error("Error code:", error.code);
+        console.error("Full error:", error);
     }
 };
 
