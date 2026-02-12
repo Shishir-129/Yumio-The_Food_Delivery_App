@@ -70,25 +70,30 @@ const StoreContextProvider = (props) => {
 
     // Function to fetch food list from database ***V V I***
     const fetchFoodList = async() => {
-        const response = await axios.get(url + "/api/food/list");
-        let foodData = response.data.data;
-        
-        // Merge with recipe data from static assets by matching food names
-        foodData = foodData.map(item => {
-            const staticItem = staticFoodList.find(staticItem => 
-                staticItem.name.toLowerCase().trim() === item.name.toLowerCase().trim()
-            );
+        try {
+            const response = await axios.get(url + "/api/food/list");
+            const apiData = Array.isArray(response?.data?.data) ? response.data.data : [];
             
-            // Use recipe from database if available, otherwise use from static assets
-            return {
-                ...item,
-                recipe: item.recipe && Array.isArray(item.recipe) && item.recipe.length > 0 
-                    ? item.recipe 
-                    : (staticItem ? staticItem.recipe : [])
-            };
-        });
-        
-        setFoodList(foodData);
+            // Merge with recipe data from static assets by matching food names
+            const foodData = apiData.map((item) => {
+                const staticItem = staticFoodList.find((staticItem) =>
+                    staticItem.name.toLowerCase().trim() === item.name.toLowerCase().trim()
+                );
+
+                // Use recipe from database if available, otherwise use from static assets
+                return {
+                    ...item,
+                    recipe: item.recipe && Array.isArray(item.recipe) && item.recipe.length > 0
+                        ? item.recipe
+                        : (staticItem ? staticItem.recipe : [])
+                };
+            });
+
+            setFoodList(foodData);
+        } catch (error) {
+            console.error("Error fetching food list:", error);
+            setFoodList([]);
+        }
     }
 
     const loadCartData = async(token) => {
