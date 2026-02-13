@@ -9,12 +9,8 @@ dotenv.config();
 
 // Create connection pool for PostgreSQL
 const pool = new Pool({
-    user: process.env.DB_USER || 'postgres',
-    password: process.env.DB_PASSWORD || 'postgres',
-    host: process.env.DB_HOST || 'localhost',
-    port: process.env.DB_PORT || 5432,  // default PostgreSQL port
-    database: process.env.DB_NAME || 'yumio',
-    ssl: process.env.DB_HOST !== 'localhost' ? { rejectUnauthorized: false } : false,
+    connectionString: process.env.DATABASE_URL || `postgresql://${process.env.DB_USER || 'postgres'}:${process.env.DB_PASSWORD || 'postgres'}@${process.env.DB_HOST || 'localhost'}:${process.env.DB_PORT || 5432}/${process.env.DB_NAME || 'yumio'}`,
+    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
     connectionTimeoutMillis: 10000,
 });
 
@@ -27,12 +23,8 @@ pool.on('error', (err) => {
 export const connectDB = async () => {
     try {
         // Log connection details (without password)
-        console.log("Attempting DB connection with:", {
-            host: process.env.DB_HOST || 'localhost',
-            port: process.env.DB_PORT || 5432,
-            database: process.env.DB_NAME || 'yumio',
-            user: process.env.DB_USER || 'postgres'
-        });
+        console.log("Attempting DB connection...");
+        console.log("Environment:", process.env.NODE_ENV || 'development');
         
         // Test connection
         const client = await pool.connect();
