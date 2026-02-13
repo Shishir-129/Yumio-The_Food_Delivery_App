@@ -38,11 +38,29 @@ export const connectDB = async () => {
                 name VARCHAR(255) NOT NULL,
                 email VARCHAR(255) NOT NULL UNIQUE,
                 password VARCHAR(255) NOT NULL,
-                cartdata JSONB DEFAULT '{}',
+                cartdata JSONB DEFAULT '{}',  -- stores cart items as JSON object with itemId as key and quantity as value
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         `);
         console.log("Users table created/verified");
+
+        // Check if cartdata column exists in users table, if not add it
+        const cartdataColumnCheck = await pool.query(`
+            SELECT EXISTS (
+                SELECT 1 FROM information_schema.columns 
+                WHERE table_name = 'users' AND column_name = 'cartdata'
+            )
+        `);
+        
+        if (!cartdataColumnCheck.rows[0].exists) {
+            console.log("Cartdata column not found. Adding cartdata column to users table...");
+            await pool.query(`
+                ALTER TABLE users ADD COLUMN cartdata JSONB DEFAULT '{}'
+            `);
+            console.log("Cartdata column added successfully to users table");
+        } else {
+            console.log("Cartdata column already exists in users table");
+        }
 
         // Create food table
         await pool.query(`
@@ -58,6 +76,24 @@ export const connectDB = async () => {
             )
         `);
         console.log("Food table created/verified");
+
+        // Check if recipe column exists, if not add it
+        const recipeColumnCheck = await pool.query(`
+            SELECT EXISTS (
+                SELECT 1 FROM information_schema.columns 
+                WHERE table_name = 'food' AND column_name = 'recipe'
+            )
+        `);
+        
+        if (!recipeColumnCheck.rows[0].exists) {
+            console.log("Recipe column not found. Adding recipe column to food table...");
+            await pool.query(`
+                ALTER TABLE food ADD COLUMN recipe JSONB DEFAULT '{"steps": []}'
+            `);
+            console.log("Recipe column added successfully to food table");
+        } else {
+            console.log("Recipe column already exists in food table");
+        }
 
         // Create orders table
         await pool.query(`
