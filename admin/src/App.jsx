@@ -12,7 +12,7 @@ import { ToastContainer } from "react-toastify";
 
 const App = () => {
 
-  const url = "http://localhost:4000"
+  const url = "https://yumio-backend-x187.onrender.com"
 
   return (
     <div>
