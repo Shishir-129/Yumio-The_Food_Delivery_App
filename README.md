@@ -1328,6 +1328,19 @@ Yumio-PostgreSQL/
 **Technology Stack**: PERN (PostgreSQL, Express, React, Node.js)  
 **Deployment Platform**: Render  
 
+
+## Contributors
+
+<a href="https://github.com/sunil0x">
+  <img src="https://github.com/sunil0x.png" width="50px" style="border-radius:50%;" alt="Your Name" />
+</a>
+<a href="https://github.com/Shishir-129">
+  <img src="https://github.com/Shishir-129.png" width="50px" style="border-radius:50%;" alt="Friend's Name" />
+</a>
+<a href="https://github.com/SandeepThapaChhetri">
+  <img src="https://github.com/SandeepThapaChhetri.png" width="50px" style="border-radius:50%;" alt="Friend's Name" />
+</a>
+
 ---
 
 ## Contact & Support
