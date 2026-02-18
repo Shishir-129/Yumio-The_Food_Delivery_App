@@ -5,6 +5,15 @@
 ## Executive Summary
 
 Yumio is a comprehensive, production-ready food delivery platform built with modern web technologies. The application enables users to order food items, view recipe (if we want to make ourself), make secure payments, and track their orders in real-time. The platform includes a customer-facing frontend application, an admin management panel, and a robust backend. This project demonstrates enterprise-level software development practices including secure authentication, payment processing, database management, and cloud deployment.
+## Team Members (Group Project)
+
+- Sandeep Chhetri (Frontend)
+- Sunil Paudel (Frontend)
+- Shishir Neupane Sharma (Backend)
+- ...
+
+
+Yumio is a comprehensive, production-ready food delivery platform built with modern web technologies. The application enables users to order food items, see recipe (if we want to make ourself), make secure payments, and track their orders in real-time. The platform includes a customer-facing frontend application, an admin management panel, and a robust backend. This project demonstrates enterprise-level software development practices including secure authentication, payment processing, database management, and cloud deployment.
 
 ---
 
