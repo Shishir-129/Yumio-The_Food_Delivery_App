@@ -1,9 +1,10 @@
 # YUMIO - Food Delivery Platform
 
-**A Full-Stack Web Application for Online Food Ordering,Recipe Viewing and Delivery**
+**A Full-Stack Web Application for Online Food Ordering, Recipe Viewing, and Delivery**
 
 ## Executive Summary
 
+Yumio is a comprehensive, production-ready food delivery platform built with modern web technologies. The application enables users to order food items, view recipe (if we want to make ourself), make secure payments, and track their orders in real-time. The platform includes a customer-facing frontend application, an admin management panel, and a robust backend. This project demonstrates enterprise-level software development practices including secure authentication, payment processing, database management, and cloud deployment.
 ## Team Members (Group Project)
 
 - Sandeep Chhetri (Frontend)
@@ -67,7 +68,7 @@ Yumio addresses the growing demand for convenient online food delivery services.
 | **React Router DOM** | 7.11.0 | Client-side routing and navigation |
 | **Axios** | 1.13.4 | HTTP client for API communication |
 | **Vite** | 7.2.4 | Modern frontend build tool and dev server |
-| **CSS3** | Latest | Styling and responsive design |
+| **CSS3** | CSS latest | Styling and responsive design |
 
 ### Admin Panel
 
@@ -83,7 +84,7 @@ Yumio addresses the growing demand for convenient online food delivery services.
 
 | Technology | Version | Purpose |
 |-----------|---------|---------|
-| **Node.js** | Latest LTS | Runtime environment |
+| **Node.js** | v20.x LTS | Runtime environment |
 | **Express.js** | 5.2.1 | Web framework and routing |
 | **PostgreSQL** | 15+ | Relational database |
 | **pg (node-postgres)** | 8.11.3 | PostgreSQL driver for Node.js |
@@ -169,7 +170,7 @@ Customer                    Admin                      Backend                  
 - Real-time cart updates
 - Cart persistence (saved to database)
 - Cart total calculation
-- Delivery fee calculation
+-  Automatic delivery fee calculation
 
 ### 4. **Secure Payment Processing**
 - Stripe integration for secure payments
@@ -213,7 +214,7 @@ Customer                    Admin                      Backend                  
 - App download section
 
 **2. Menu/Explore Section**
-- Filter foods by category (Salad, Rolls, Desserts, Sandwich, Cake, Pure Veg, Pasta, Noodles)
+- Filter foods by 8 category (Salad, Rolls, Desserts, Sandwich, Cake, Pure Veg, Pasta, Noodles)
 - Search bar to find specific items
 - Food item cards with prices and ratings
 - Add to cart buttons
@@ -1332,7 +1333,7 @@ Yumio-PostgreSQL/
 
 ### Team & Credits
 
-**Project Duration**: 2 months  
+**Project Duration**:  Dec 2025 – Feb 2026 (2 months)  
 **Technology Stack**: PERN (PostgreSQL, Express, React, Node.js)  
 **Deployment Platform**: Render  
 
