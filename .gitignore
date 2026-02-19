@@ -28,8 +28,6 @@ dist-ssr
 .env
 .env.example
 
-# Uploaded files and user-generated content
-uploads/
 
 # Editor directories and files
 .vscode/*
