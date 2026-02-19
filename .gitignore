@@ -1,0 +1,43 @@
+# Documentation files
+CONVERSION_SUMMARY.md
+DOCUMENTATION_INDEX.md
+FINAL_SUMMARY.md
+MIGRATION_GUIDE.md
+PERN_CONVERSION_COMPLETE.md
+README.md
+SETUP_CHECKLIST.md
+SQL_QUERY_REFERENCE.md
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies and build outputs
+node_modules
+node_modules/
+dist
+dist-ssr
+*.local
+
+# Environment variables
+.env
+.env.example
+
+# Uploaded files and user-generated content
+uploads/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
