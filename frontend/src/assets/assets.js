@@ -123,7 +123,7 @@ export const food_list = [
         _id: "1",
         name: "Greek salad",
         image: food_1,
-        price: 12,
+        price: 380,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Salad",
         recipe: ["Wash and chop fresh tomatoes, cucumbers, and red onions", "Add kalamata olives and crumbled feta cheese", "Mix olive oil, lemon juice, and oregano for dressing", "Toss all ingredients together", "Serve chilled and enjoy!"]
@@ -132,7 +132,7 @@ export const food_list = [
         _id: "2",
         name: "Veg salad",
         image: food_2,
-        price: 18,
+        price: 280,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Salad",
         recipe: ["Chop mixed vegetables (carrots, bell peppers, broccoli)", "Wash and tear fresh lettuce leaves", "Add cherry tomatoes and cucumber slices", "Prepare dressing with vinegar and olive oil", "Mix all ingredients and serve immediately"]
@@ -141,7 +141,7 @@ export const food_list = [
         _id: "3",
         name: "Clover Salad",
         image: food_3,
-        price: 16,
+        price: 300,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Salad",
         recipe: ["Clean and wash fresh clover greens", "Chop fresh vegetables like tomatoes and radishes", "Add microgreens for extra nutrition", "Make light vinaigrette dressing", "Toss gently and serve immediately"]
@@ -150,7 +150,7 @@ export const food_list = [
         _id: "4",
         name: "Chicken Salad",
         image: food_4,
-        price: 24,
+        price: 450,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Salad",
         recipe: ["Grill or bake chicken breast until cooked through", "Cool and slice the chicken into bite-sized pieces", "Mix with fresh greens and diced vegetables", "Add mayo or yogurt-based dressing", "Top with nuts or croutons and serve"]
@@ -159,7 +159,7 @@ export const food_list = [
         _id: "5",
         name: "Lasagna Rolls",
         image: food_5,
-        price: 14,
+        price: 650,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls",
         recipe: ["Cook lasagna sheets until al dente", "Prepare ricotta filling with spinach and cheese", "Lay sheets flat and spread filling evenly", "Roll tightly from one end", "Place seam-side down, cover with sauce, and bake at 350°F for 25 minutes"]
@@ -168,7 +168,7 @@ export const food_list = [
         _id: "6",
         name: "Peri Peri Rolls",
         image: food_6,
-        price: 12,
+        price: 350,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls",
         recipe: ["Marinate chicken in peri peri spice mix", "Grill chicken until cooked and charred", "Warm tortillas or flatbreads", "Slice grilled chicken and place in tortillas", "Add fresh vegetables and peri peri sauce, roll tight and serve"]
@@ -177,7 +177,7 @@ export const food_list = [
         _id: "7",
         name: "Chicken Rolls",
         image: food_7,
-        price: 20,
+        price: 250,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls",
         recipe: ["Cook chicken breast and dice into small pieces", "Heat tortillas until soft and pliable", "Sauté onions and bell peppers", "Mix chicken with vegetables and season", "Roll in tortillas with cheese and sauce, bake until crispy"]
@@ -186,7 +186,7 @@ export const food_list = [
         _id: "8",
         name: "Veg Rolls",
         image: food_8,
-        price: 15,
+        price: 150,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls",
         recipe: ["Chop mixed vegetables (carrots, cabbage, mushrooms)", "Warm tortillas or spring roll wrappers", "Sauté vegetables with soy sauce and ginger", "Place vegetables in center of wrapper", "Roll tightly and serve with sweet chili sauce"]
@@ -195,7 +195,7 @@ export const food_list = [
         _id: "9",
         name: "Ripple Ice Cream",
         image: food_9,
-        price: 14,
+        price: 140,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Deserts",
         recipe: ["Prepare vanilla ice cream base", "Churn in ice cream maker until soft-serve consistency", "Add ripple sauce (caramel or chocolate)", "Swirl gently to create ripple pattern", "Freeze for at least 4 hours before serving"]
@@ -204,7 +204,7 @@ export const food_list = [
         _id: "10",
         name: "Fruit Ice Cream",
         image: food_10,
-        price: 22,
+        price: 200,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Deserts",
         recipe: ["Blend fresh strawberries or mixed berries", "Mix with condensed milk and whipped cream", "Fold in fresh fruit pieces", "Pour into container and freeze", "Churn or stir every 30 minutes for 2-3 hours until creamy"]
@@ -213,7 +213,7 @@ export const food_list = [
         _id: "11",
         name: "Jar Ice Cream",
         image: food_11,
-        price: 10,
+        price: 100,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Deserts",
         recipe: ["Pour heavy cream into jar", "Add sweetened condensed milk", "Add flavoring and shake vigorously for 5-7 minutes", "Place in ice bath for 10 minutes", "Shake again and enjoy homemade ice cream!"]
@@ -222,7 +222,7 @@ export const food_list = [
         _id: "12",
         name: "Vanilla Ice Cream",
         image: food_12,
-        price: 12,
+        price: 150,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Deserts",
         recipe: ["Heat milk with sugar until dissolved", "Add vanilla extract and egg yolks", "Cool mixture completely", "Whip cream until stiff peaks form", "Fold whipped cream into cooled mixture and freeze"]
@@ -231,7 +231,7 @@ export const food_list = [
         _id: "13",
         name: "Chicken Sandwich",
         image: food_13,
-        price: 12,
+        price: 210,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Sandwich",
         recipe: ["Grill or fry chicken breast until cooked", "Toast bread slices until golden", "Spread mayo on both bread slices", "Add lettuce, tomato, and cucumber slices", "Place chicken on bread, top with second slice, cut diagonally and serve"]
@@ -240,7 +240,7 @@ export const food_list = [
         _id: "14",
         name: "Vegan Sandwich",
         image: food_14,
-        price: 18,
+        price: 180,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Sandwich",
         recipe: ["Toast whole wheat bread", "Spread vegan mayo and hummus", "Add roasted vegetables and fresh greens", "Layer sliced avocado and tomato", "Season with salt and pepper, close sandwich and serve"]
@@ -249,7 +249,7 @@ export const food_list = [
         _id: "15",
         name: "Grilled Sandwich",
         image: food_15,
-        price: 16,
+        price: 260,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Sandwich",
         recipe: ["Butter two slices of bread on outer sides", "Place in pan over medium heat", "Add cheese and grilled vegetables inside", "Toast until golden brown on both sides", "Cut and serve hot with a side of tomato sauce"]
@@ -258,7 +258,7 @@ export const food_list = [
         _id: "16",
         name: "Bread Sandwich",
         image: food_16,
-        price: 24,
+        price: 140,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Sandwich",
         recipe: ["Slice fresh bread into thin pieces", "Prepare filling with meats and cheeses", "Layer ingredients between bread slices", "Toast lightly in oven", "Serve warm with pickles on the side"]
@@ -267,7 +267,7 @@ export const food_list = [
         _id: "17",
         name: "Cup Cake",
         image: food_17,
-        price: 14,
+        price: 140,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake",
         recipe: ["Mix flour, sugar, and baking powder", "Cream butter and add eggs", "Combine wet and dry ingredients", "Add vanilla extract", "Fill cupcake liners halfway and bake at 350°F for 18-20 minutes"]
@@ -276,7 +276,7 @@ export const food_list = [
         _id: "18",
         name: "Vegan Cake",
         image: food_18,
-        price: 12,
+        price: 150,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake",
         recipe: ["Mix plant-based milk with apple cider vinegar", "Combine flour, sugar, and cocoa powder", "Mix in oil and vanilla extract", "Combine wet and dry ingredients gently", "Pour into greased pan and bake at 350°F for 30-35 minutes"]
@@ -285,7 +285,7 @@ export const food_list = [
         _id: "19",
         name: "Butterscotch Cake",
         image: food_19,
-        price: 20,
+        price: 200,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake",
         recipe: ["Prepare cake batter with flour and butter", "Make butterscotch sauce with brown sugar", "Pour half batter into pan", "Add butterscotch sauce", "Top with remaining batter and bake at 350°F for 40 minutes"]
@@ -294,7 +294,7 @@ export const food_list = [
         _id: "20",
         name: "Sliced Cake",
         image: food_20,
-        price: 15,
+        price: 50,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake",
         recipe: ["Bake a sponge cake in round pans", "Cool completely before slicing", "Prepare cream filling or buttercream", "Layer cakes with filling between each layer", "Frost the outside and decorate as desired"]
@@ -303,7 +303,7 @@ export const food_list = [
         _id: "21",
         name: "Garlic Mushroom ",
         image: food_21,
-        price: 14,
+        price: 140,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Pure Veg",
         recipe: ["Slice fresh mushrooms thinly", "Mince fresh garlic cloves", "Heat butter in pan and add garlic", "Sauté mushrooms until golden", "Season with salt, pepper, and herbs, finish with fresh parsley"]
@@ -312,7 +312,7 @@ export const food_list = [
         _id: "22",
         name: "Fried Cauliflower",
         image: food_22,
-        price: 22,
+        price: 150,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Pure Veg",
         recipe: ["Cut cauliflower into florets", "Mix flour, cornstarch, and spices for coating", "Dip florets in batter", "Deep fry until golden and crispy", "Drain on paper towels and serve with garlic sauce"]
@@ -321,7 +321,7 @@ export const food_list = [
         _id: "23",
         name: "Mix Veg Pulao",
         image: food_23,
-        price: 10,
+        price: 200,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Pure Veg",
         recipe: ["Chop mixed vegetables (carrots, peas, corn)", "Sauté onions and ginger", "Add rice and toast for 2 minutes", "Add water and bring to boil", "Simmer covered for 15 minutes until rice is cooked"]
@@ -330,7 +330,7 @@ export const food_list = [
         _id: "24",
         name: "Rice Zucchini",
         image: food_24,
-        price: 12,
+        price: 120,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Pure Veg",
         recipe: ["Dice fresh zucchini into small pieces", "Sauté with oil and garlic", "Add cooked rice and stir well", "Season with soy sauce and sesame oil", "Cook for 5 minutes and serve hot"]
@@ -339,7 +339,7 @@ export const food_list = [
         _id: "25",
         name: "Cheese Pasta",
         image: food_25,
-        price: 12,
+        price: 220,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Pasta",
         recipe: ["Boil pasta until al dente in salted water", "Drain and reserve some pasta water", "Toss hot pasta with butter and garlic", "Add grated cheese gradually", "Mix in reserved pasta water for creamy sauce and serve"]
@@ -348,7 +348,7 @@ export const food_list = [
         _id: "26",
         name: "Tomato Pasta",
         image: food_26,
-        price: 18,
+        price: 180,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Pasta",
         recipe: ["Cook pasta according to package directions", "Sauté fresh garlic in olive oil", "Add crushed tomatoes and simmer", "Season with Italian herbs and salt", "Toss with cooked pasta and serve with fresh basil"]
@@ -357,7 +357,7 @@ export const food_list = [
         _id: "27",
         name: "Creamy Pasta",
         image: food_27,
-        price: 16,
+        price: 160,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Pasta",
         recipe: ["Cook pasta until tender", "Prepare cream sauce with butter and heavy cream", "Add garlic and parmesan cheese", "Season with salt and white pepper", "Toss pasta in sauce and garnish with fresh parsley"]
@@ -366,7 +366,7 @@ export const food_list = [
         _id: "28",
         name: "Chicken Pasta",
         image: food_28,
-        price: 24,
+        price: 240,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Pasta",
         recipe: ["Cube chicken breast and season with salt and pepper", "Sauté chicken until cooked through", "Cook pasta according to instructions", "Make cream or tomato sauce", "Combine pasta, chicken, and sauce, toss well and serve"]
@@ -375,7 +375,7 @@ export const food_list = [
         _id: "29",
         name: "Butter Noodles",
         image: food_29,
-        price: 14,
+        price: 140,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles",
         recipe: ["Boil noodles until tender and drain", "Melt butter in a large pan", "Add sesame oil and garlic", "Toss noodles in buttery sauce", "Season with salt and garnish with green onions"]
@@ -384,7 +384,7 @@ export const food_list = [
         _id: "30",
         name: "Veg Noodles",
         image: food_30,
-        price: 12,
+        price: 120,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles",
         recipe: ["Boil noodles until cooked", "Chop mixed vegetables finely", "Stir-fry vegetables in oil and garlic", "Add noodles and soy sauce", "Toss well and serve hot"]
@@ -393,7 +393,7 @@ export const food_list = [
         _id: "31",
         name: "Somen Noodles",
         image: food_31,
-        price: 20,
+        price: 200,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles",
         recipe: ["Boil somen noodles for 2 minutes and drain", "Chill noodles in ice water", "Prepare dipping sauce with soy sauce and mirin", "Arrange noodles on a plate", "Serve with ice and dipping sauce on the side"]
@@ -402,7 +402,7 @@ export const food_list = [
         _id: "32",
         name: "Cooked Noodles",
         image: food_32,
-        price: 15,
+        price: 100,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles",
         recipe: ["Boil noodles in salted water until tender", "Drain well and set aside", "Cook with sautéed garlic, ginger, and vegetables", "Add soy sauce and rice vinegar", "Stir-fry until heated through and serve immediately"]

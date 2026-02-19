@@ -34,7 +34,7 @@
     color: #747474;
     font-weight: 500;
     padding: 1vw 2.3vw;
-    background-color: white;
+    background-color: rgb(214, 205, 205);
     font-size: max(1vw,13px);
     border-radius: 50px;
     cursor: pointer;

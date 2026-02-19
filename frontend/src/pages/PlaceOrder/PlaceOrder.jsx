@@ -14,9 +14,9 @@ const PlaceOrder = () => {
       email:"",
       street:"",
       city:"",
-      state:"",
-      zipcode:"",
-      country:"",
+      province:"",
+      postalcode:"",
+      country:"Nepal",
       phone:""
     })
 
@@ -94,11 +94,11 @@ const PlaceOrder = () => {
         <input required name='street' onChange={onChangeHandler} value={data.street} type="text" placeholder="Street" />
         <div className="multi-fields">
           <input required name='city' onChange={onChangeHandler} value={data.city} type="text" placeholder="City" />
-          <input required name='state' onChange={onChangeHandler} value={data.state} type="text" placeholder="State" />
+          <input required name='Province' onChange={onChangeHandler} value={data.province} type="text" placeholder="Province" />
         </div>
         <div className="multi-fields">
-          <input required name='zipcode' onChange={onChangeHandler} value={data.zipcode} type="text" placeholder="Zip Code" />
-          <input required name='country' onChange={onChangeHandler} value={data.country} type="text" placeholder="Country" />
+          <input required name='postalcode' onChange={onChangeHandler} value={data.postalcode} type="text" placeholder="Postal Code" />
+          <input required name='country' onChange={onChangeHandler} value="Nepal" type="text" placeholder="Country" />
         </div>
         <input required name='phone' onChange={onChangeHandler} value={data.phone} type="text" placeholder="Phone Number" />
       </div>
@@ -109,17 +109,17 @@ const PlaceOrder = () => {
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>${getTotalCartAmount()}</p>
+              <p>Rs. {getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
+              <p>Rs. {getTotalCartAmount() === 0 ? 0 : 40}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
-              <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
+              <b>Rs. {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>
           </div>
           <button type='submit'>Proceed to Payment</button>
