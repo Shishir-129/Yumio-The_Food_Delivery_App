@@ -6,7 +6,7 @@ import fs from 'fs';
 
 // add food item
 const addFood = async (req, res) => {
-    let image_filename = `${req.file.filename}`; // getting filename from multer
+    let image_filename = `${req.file.path}`; // Cloudinary URL
     let recipeSteps = req.body.recipe ? JSON.parse(req.body.recipe) : []; // parse recipe steps if provided
 
     try {
