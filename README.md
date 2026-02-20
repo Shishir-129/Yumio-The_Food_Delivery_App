@@ -4,11 +4,11 @@
 
 ## Executive Summary
 
-Yumio is a comprehensive, production-ready food delivery platform built with modern web technologies. The application enables users to order food items, view recipe (if we want to make ourself), make secure payments, and track their orders in real-time. The platform includes a customer-facing frontend application, an admin management panel, and a robust backend. This project demonstrates enterprise-level software development practices including secure authentication, payment processing, database management, and cloud deployment.
+Yumio is a comprehensive, production-ready food delivery platform built with modern web technologies. The application enables users to order food items, view recipe for food items, make secure payments, and track their orders in real-time. The platform includes a customer-facing frontend application, an admin management panel, and a robust backend. This project demonstrates enterprise-level software development practices including secure authentication, payment processing, database management, and cloud deployment.
 
 ## Team Members (Group Project)
 
-- Shishir Neupane Sharma (Backend+DB)
+- Shishir Neupane Sharma (Backend + DB)
 - Sandeep Chhetri (Frontend)
 - Sunil Paudel (Frontend)
 
@@ -274,16 +274,22 @@ Customer                    Admin                      Backend                  
 
 #### Few Screenshots:
 
+**🏠 Home Page**
 <img width="1694" height="806" alt="image" src="https://github.com/user-attachments/assets/79ec58a4-d5e9-4986-abc6-7ee1a988f06d" />
 ----------------------------------------------------------------------------------------------------------------------------------
+**🍽️ Menu/Explore Section**
 <img width="1654" height="477" alt="image" src="https://github.com/user-attachments/assets/e126983c-a144-4098-9517-b37eda42d968" />
 ----------------------------------------------------------------------------------------------------------------------------------
+**🛒 Cart Page**
 <img width="1641" height="688" alt="image" src="https://github.com/user-attachments/assets/af135415-868e-4505-a53e-67e2ec17ab84" />
 ----------------------------------------------------------------------------------------------------------------------------------
+**💳 Checkout Page**
 <img width="1693" height="860" alt="image" src="https://github.com/user-attachments/assets/622f36aa-b43c-4b35-8bc5-7d5b79b43df2" />
 ----------------------------------------------------------------------------------------------------------------------------------
+**📦 My Orders Page**
 <img width="1741" height="809" alt="image" src="https://github.com/user-attachments/assets/08c8a0e3-4a52-4a11-ad4b-80a6c262201a" />
 ----------------------------------------------------------------------------------------------------------------------------------
+**👨‍🍳 Recipe Modal**
 <img width="1663" height="778" alt="image" src="https://github.com/user-attachments/assets/2cbb83ab-96d0-4e61-bd49-0717447b5157" />
 
 
@@ -326,10 +332,13 @@ Customer                    Admin                      Backend                  
 
 #### Few Screenshots:
 
+**➕ Add Food Item**
 <img width="1800" height="855" alt="image" src="https://github.com/user-attachments/assets/b1c88c5b-6357-4e7b-a444-6c3c147c58c9" />
 ----------------------------------------------------------------------------------------------------------------------------------
+**📋 List/Manage Inventory**
 <img width="1783" height="837" alt="image" src="https://github.com/user-attachments/assets/1b190196-05c1-4bf3-ae52-dc5e9afab752" />
 ----------------------------------------------------------------------------------------------------------------------------------
+**🚚 Orders Management**
 <img width="1748" height="858" alt="image" src="https://github.com/user-attachments/assets/0b89bac1-5fb6-453c-bd77-3e1ed60827fe" />
 
 
@@ -1329,7 +1338,7 @@ Yumio-PostgreSQL/
 
 ### Team & Credits
 
-**Project Duration**:  Dec 2025 – Feb 2026 (2 months)  
+**Project Duration**:  December 2025 – February 2026 (2 months)  
 **Technology Stack**: PERN (PostgreSQL, Express, React, Node.js)  
 **Deployment Platform**: Render  
 
