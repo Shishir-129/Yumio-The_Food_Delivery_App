@@ -1,8 +1,6 @@
 import { v2 as cloudinary } from 'cloudinary';
-import pkg from 'multer-storage-cloudinary';
+import * as multerStorageCloudinary from 'multer-storage-cloudinary';
 import dotenv from 'dotenv';
-
-const { CloudinaryStorage } = pkg;
 
 dotenv.config();
 
@@ -14,7 +12,7 @@ cloudinary.config({
 });
 
 // Configure Multer Storage
-const storage = new CloudinaryStorage({
+const storage = new multerStorageCloudinary.CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
         folder: 'yumio-food-items',
