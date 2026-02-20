@@ -1,5 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary';
-import * as multerStorageCloudinary from 'multer-storage-cloudinary';
+import CloudinaryStorage from 'multer-storage-cloudinary';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -11,13 +11,17 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-// Configure Multer Storage
-const storage = new multerStorageCloudinary.CloudinaryStorage({
+console.log("Cloudinary config:", { cloud_name: process.env.CLOUDINARY_CLOUD_NAME });
+
+// Configure Multer Storage - CloudinaryStorage is the default export
+const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
         folder: 'yumio-food-items',
         allowed_formats: ['jpg', 'jpeg', 'png', 'webp']
     }
 });
+
+console.log("Cloudinary storage configured");
 
 export { cloudinary, storage };
