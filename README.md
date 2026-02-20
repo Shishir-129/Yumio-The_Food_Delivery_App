@@ -8,9 +8,10 @@ Yumio is a comprehensive, production-ready food delivery platform built with mod
 
 ## Team Members (Group Project)
 
-- Shishir Neupane Sharma (Backend+DB)
-- Sandeep Chhetri (Frontend)
+- Shishir Neupane Sharma (Backend + DB)
 - Sunil Paudel (Frontend)
+- Sandeep Chhetri (Frontend)
+
 
 
 ## Table of Contents
