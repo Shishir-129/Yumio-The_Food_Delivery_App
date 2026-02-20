@@ -2,11 +2,11 @@
 // this file is used to handle food related operations such as adding food items, listing food items and removing food items
 
 import pool from "../config/db.js";
-import fs from 'fs';
+import { cloudinary } from "../config/cloudinary.js";
 
 // add food item
 const addFood = async (req, res) => {
-    let image_filename = `${req.file.filename}`; // getting filename from multer
+    let image_filename = `${req.file.path}`; // Cloudinary URL
     let recipeSteps = req.body.recipe ? JSON.parse(req.body.recipe) : []; // parse recipe steps if provided
 
     try {
@@ -35,7 +35,7 @@ const listFood = async (req, res) => {
 // remove food item
 const removeFood = async (req, res) => {
     try {
-        // First, get the food item to get the image filename
+        // First, get the food item to get the image URL
         const foodResult = await pool.query('SELECT image FROM food WHERE id = $1', [req.body.id]);
         
         if (foodResult.rows.length === 0) {
@@ -44,8 +44,21 @@ const removeFood = async (req, res) => {
 
         const food = foodResult.rows[0];
         
-        // Delete the image file if it exists
-        fs.unlink(`uploads/${food.image}`, () => {});
+        // Delete the image from Cloudinary if it exists
+        if (food.image) {
+            // Extract public_id from Cloudinary URL
+            // URL format: https://res.cloudinary.com/[cloud_name]/image/upload/v[version]/[folder]/[filename]
+            // We need: yumio-food-items/[filename]
+            const urlParts = food.image.split('/');
+            const filename = urlParts[urlParts.length - 1]; // Get filename
+            const public_id = `yumio-food-items/${filename.split('.')[0]}`; // Construct public_id
+            
+            try {
+                await cloudinary.uploader.destroy(public_id);
+            } catch (cloudError) {
+                console.log('Cloudinary deletion error:', cloudError);
+            }
+        }
 
         // Delete the food item from database
         await pool.query('DELETE FROM food WHERE id = $1', [req.body.id]);

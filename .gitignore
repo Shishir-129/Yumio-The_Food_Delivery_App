@@ -26,10 +26,11 @@ dist-ssr
 
 # Environment variables
 .env
-.env.example
 
-# Uploaded files and user-generated content
+# Local uploads folder (using Cloudinary instead)
+backend/uploads/
 uploads/
+
 
 # Editor directories and files
 .vscode/*
