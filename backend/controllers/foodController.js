@@ -10,9 +10,27 @@ const addFood = async (req, res) => {
         return res.json({ success: false, message: "No image file uploaded" });
     }
     
-    // For Cloudinary storage, req.file.path contains the full URL
-    let image_url = req.file.path; // Cloudinary returns full URL in path property
-    console.log("Uploaded file path:", image_url); // DEBUG: Check what URL is being saved
+    // Debug: Log the entire req.file object to see what multer returns
+    console.log("DEBUG req.file:", JSON.stringify(req.file, null, 2));
+    
+    // For Cloudinary storage, construct the full URL manually
+    // req.file might have: filename, path, public_id, or secure_url
+    let image_url;
+    
+    if (req.file.secure_url) {
+        image_url = req.file.secure_url; // Cloudinary secure URL
+    } else if (req.file.path) {
+        image_url = req.file.path; // Full URL if path exists
+    } else if (req.file.public_id) {
+        // Construct URL manually from public_id
+        const cloudinaryName = process.env.CLOUDINARY_CLOUD_NAME;
+        image_url = `https://res.cloudinary.com/${cloudinaryName}/image/upload/${req.file.public_id}`;
+    } else {
+        return res.json({ success: false, message: "Failed to get image URL from Cloudinary" });
+    }
+    
+    console.log("Final image_url:", image_url);
+    
     let recipeSteps = req.body.recipe ? JSON.parse(req.body.recipe) : []; // parse recipe steps if provided
 
     try {
