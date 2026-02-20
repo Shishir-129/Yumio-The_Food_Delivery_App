@@ -14,10 +14,12 @@ cloudinary.config({
 // Configure Multer Storage
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
-    params: {
-        folder: 'yumio-food-items',
-        allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
-        resource_type: 'auto'
+    params: async (req, file) => {
+        return {
+            folder: 'yumio-food-items',
+            allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
+            resource_type: 'auto'
+        };
     }
 });
 

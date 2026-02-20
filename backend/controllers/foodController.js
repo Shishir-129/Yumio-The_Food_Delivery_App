@@ -12,6 +12,7 @@ const addFood = async (req, res) => {
     
     // For Cloudinary storage, req.file.path contains the full URL
     let image_url = req.file.path; // Cloudinary returns full URL in path property
+    console.log("Uploaded file path:", image_url); // DEBUG: Check what URL is being saved
     let recipeSteps = req.body.recipe ? JSON.parse(req.body.recipe) : []; // parse recipe steps if provided
 
     try {
