@@ -16,9 +16,7 @@ const authMiddleware = async (req,res,next) => {
         next(); // proceed to the next middleware or controller
     } catch (error) {
         console.log("JWT Verification Error:", error.message)
-        console.log("JWT_SECRET:", process.env.JWT_SECRET)
-        console.log("Token:", token)
-        res.json({success: false,message:"Error!", errorDetails: error.message})
+        res.json({success: false,message:"Error!"})
     }
 }
 
