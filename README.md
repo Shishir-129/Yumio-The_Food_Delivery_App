@@ -8,6 +8,11 @@ Yumio is a comprehensive, production-ready food delivery platform built with mod
 
 ---
 
+## Team Members
+- **Shishir Neupane Sharma** - Backend, Database, Deployment, Integration
+- **Sandeep Thapa Chhetri** - Frontend 
+- **Sunil Paudel** - Frontend
+
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
@@ -82,6 +87,8 @@ Yumio addresses the growing demand for convenient online food delivery services.
 | **JWT (jsonwebtoken)** | 9.0.3 | Token-based authentication |
 | **Bcrypt** | 6.0.0 | Password hashing and security |
 | **Multer** | 2.0.2 | File upload handling |
+| **Multer Storage Cloudinary** | 2.2.1 | Cloudinary storage driver for Multer |
+| **Cloudinary** | 2.4.0 | Cloud image storage and CDN |
 | **Stripe** | 20.2.0 | Payment processing |
 | **CORS** | 2.8.5 | Cross-origin resource sharing |
 | **Dotenv** | 17.2.3 | Environment variable management |
@@ -92,6 +99,7 @@ Yumio addresses the growing demand for convenient online food delivery services.
 |------|---------|
 | **Render** | Cloud hosting platform for frontend, backend, and database |
 | **PostgreSQL Managed Database** | Render-hosted database service |
+| **Cloudinary** | Cloud image storage, optimization, and CDN for food item images |
 | **Git/GitHub** | Version control and repository management |
 | **npm** | Package manager |
 
@@ -188,6 +196,15 @@ Customer                    Admin                      Backend                  
 - Responsive design for mobile and desktop
 - Profile management
 - Delivery tracking
+
+### 8. **Cloud Image Storage with Cloudinary**
+- Images uploaded directly to Cloudinary CDN
+- Automatic image optimization and compression
+- Global CDN for fast image delivery
+- Secure HTTPS URLs stored in database
+- No local server storage needed
+- Scalable for unlimited food items
+- Support for multiple image formats (JPG, PNG, WebP)
 
 ---
 
@@ -533,6 +550,85 @@ UPDATE orders SET payment = TRUE where id = orderId
 
 ---
 
+## Image Storage with Cloudinary
+
+### Overview
+
+Yumio uses **Cloudinary**, a cloud-based image storage and CDN service, to store all food item images. This eliminates the need for local server file storage and provides automatic optimization and fast global delivery.
+
+### How It Works
+
+1. **Admin uploads food item** with image through the admin panel
+2. **Backend receives file** via Multer file upload handler
+3. **Multer-Storage-Cloudinary driver** automatically uploads to Cloudinary
+4. **Cloudinary returns secure HTTPS URL** with optimization metadata
+5. **URL is stored in database** (PostgreSQL `food.image` column)
+6. **Frontend displays images** directly from Cloudinary CDN
+
+### Benefits
+
+- **No Local Storage**: Images not stored on server—reduces server costs and complexity
+- **Automatic Optimization**: Cloudinary automatically compresses and optimizes images
+- **Global CDN**: Images served from CDN locations nearest to users—faster loading
+- **Scalability**: Support unlimited food items without server storage constraints
+- **Security**: HTTPS URLs, secure access controls, backup redundancy
+- **Reliability**: 99.9% uptime SLA with automatic failover
+
+### Technical Implementation
+
+**Backend Configuration** (`backend/config/cloudinary.js`):
+```javascript
+import * as cloudinary from 'cloudinary';
+import CloudinaryStorage from 'multer-storage-cloudinary';
+
+cloudinary.v2.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: 'yumio-food-items',
+        allowed_formats: ['jpg', 'jpeg', 'png', 'webp']
+    }
+});
+```
+
+**Upload Endpoint** (`POST /api/food/add`):
+- Accepts multipart/form-data with image file
+- Multer processes the file
+- CloudinaryStorage uploads to Cloudinary and returns URL
+- URL stored in PostgreSQL database
+- Response includes Cloudinary URL
+
+### Database Storage
+
+Food item images are stored as full Cloudinary URLs in the `food.image` column:
+
+```
+https://res.cloudinary.com/dljjitamj/image/upload/v1771592426/yumio-food-items/mjzeijtrd3lazpkcp5iv.png
+```
+
+Format breakdown:
+- `res.cloudinary.com`: Cloudinary CDN domain
+- `dljjitamj`: Cloud name (unique account identifier)
+- `image/upload`: Image path
+- `v1771592426`: Version timestamp
+- `yumio-food-items/`: Cloudinary folder
+- `mjzeijtrd3lazpkcp5iv.png`: Unique public ID with extension
+
+### Environment Variables Required
+
+```
+CLOUDINARY_CLOUD_NAME=dljjitamj
+CLOUDINARY_API_KEY=467354427264935
+CLOUDINARY_API_SECRET=[secret_key]
+```
+
+---
+
 ## Database Schema
 
 ### PostgreSQL Database Structure
@@ -594,7 +690,10 @@ CREATE TABLE food (
     ]
   }
   ```
-- `image`: Filename stored in server's uploads folder
+- `image`: Cloudinary CDN URL for the food item image (stored as full HTTPS URL)
+  ```
+  https://res.cloudinary.com/dljjitamj/image/upload/v1771592426/yumio-food-items/mjzeijtrd3lazpkcp5iv.png
+  ```
 
 #### Orders Table
 ```sql
@@ -778,9 +877,17 @@ Content-Type: multipart/form-data
 Response:
 {
   "success": true,
-  "message": "Food Item Added Successfully"
+  "message": "Food Item Added Successfully",
+  "imageUrl": "https://res.cloudinary.com/dljjitamj/image/upload/v1771592426/yumio-food-items/mjzeijtrd3lazpkcp5iv.png"
 }
 ```
+
+**Image Upload Details**:
+- Images are uploaded to **Cloudinary** CDN (cloud image storage)
+- Supported formats: JPG, JPEG, PNG, WebP
+- Automatic image optimization and fast delivery globally
+- No local file storage—images stored in cloud
+- Returns Cloudinary URL stored in database
 
 #### Remove Food Item (Admin Only)
 ```http
