@@ -43,7 +43,7 @@ Yumio addresses the growing demand for convenient online food delivery services.
 ### Live Deployment
 
 - **Frontend**   : https://yumio-frontend-7qtx.onrender.com/ (deployed on Render)
-- **Admin Panel**: https://yumio-admin-wd3p.onrender.com/ (deployed on Render)
+- **Admin Panel**: *Private due to security concerns* (deployed on Render)
 - **Backend**    : https://yumio-backend-x187.onrender.com/ (deployed on Render)
 
 ### Project Duration
